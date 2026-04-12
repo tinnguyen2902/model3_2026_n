@@ -1,0 +1,21 @@
+package BookManager;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class BookDataByte {
+    Connection conn = null;
+        try {
+        conn =
+                DriverManager.getConnection("jdbc:aws-wrapper:mysql://localhost:3306/MD3_LS7_Book" +
+                        "user=root&password=123");
+   ****Thay link chỗ này thôi*********
+    } catch (
+    SQLException ex) {
+        // handle any errors
+        System.out.println("SQLException: " + ex.getMessage());
+        System.out.println("SQLState: " + ex.getSQLState());
+        System.out.println("VendorError: " + ex.getErrorCode());
+    }
+}
