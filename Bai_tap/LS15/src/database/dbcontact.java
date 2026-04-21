@@ -1,14 +1,18 @@
-package Database;
+package database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class dbConnect {
-    public static Connection getConnection() {
+public class dbcontact {
+    public static Connection getConnection(){
         Connection conn = null;
+
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onTap?user=root&password=123");
+            conn =
+                    DriverManager.getConnection("jdbc:mysql://localhost:3306/MD3_LS15?" +
+                            "user=root&password=123");
+
         } catch (
                 SQLException ex) {
             // handle any errors
@@ -19,4 +23,3 @@ public class dbConnect {
         return conn;
     }
 }
-// chú ý dấu chấm hỏi sau url

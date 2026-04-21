@@ -1,17 +1,28 @@
 package Model;
 
+import java.sql.Timestamp;
+
 public class Order {
    private int o_id;
    private int c_id;
-   private double created_at;
+   private String customerName;
+   private Timestamp created_at;
 
     public Order() {
     }
 
-    public Order(int o_id, int c_id, double created_at) {
+    public Order(int o_id, int c_id, Timestamp created_at) {
         this.o_id = o_id;
         this.c_id = c_id;
         this.created_at = created_at;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
     public int getO_id() {
@@ -30,11 +41,17 @@ public class Order {
         this.c_id = c_id;
     }
 
-    public double getCreated_at() {
+    public Timestamp getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(double created_at) {
+    public void setCreated_at(Timestamp created_at) {
         this.created_at = created_at;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("ID: %-5d | Khách hàng: %-15s | Ngày tạo: %s",
+                o_id,customerName,created_at);
     }
 }
